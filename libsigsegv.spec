@@ -1,15 +1,17 @@
-Summary:	GNU libsigsegv  -  Handling page faults in user mode
-Summary(pl):	GNU libsigsegv  -  Obs³uga b³êdów segmentacji na poziomie u¿ytkownika
+#
+# Conditional build:
+%bcond_with	tests	# perform "make check" (requires mounted /proc)
+#
+Summary:	GNU libsigsegv - handling page faults in user mode
+Summary(pl):	GNU libsigsegv - obs³uga b³êdów segmentacji na poziomie u¿ytkownika
 Name:		libsigsegv
 Version:	2.1
 Release:	1
 License:	GPL
 Group:		Development/Libraries
-Url:		http://www.gnu.org/directory/GNU/GNUlibsigsegv.html
-Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/gnu/libsigsegv/%{name}-%{version}.tar.gz
 # Source0-md5:	6d75ca3fede5fbfd72a78bc918d9e174
-BuildRequires:	autoconf
-BuildRequires:	automake
+URL:		http://www.gnu.org/directory/GNU/GNUlibsigsegv.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,18 +42,14 @@ u¿yteczn± technik± do implementacji:
 %setup -q
 
 %build
-# hm.. doesn't work on ac ;)
-# %{__aclocal}
-# %{__autoconf}
-# %{__automake}
 %configure
 %{__make}
-%ifnarch alpha
-%{__make} check
-%endif
+
+%{?with_tests:%{__make} check}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -62,4 +60,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README ChangeLog NEWS AUTHORS
 %{_includedir}/*.h
-%{_libdir}/*
+%{_libdir}/lib*.a
+%{_libdir}/lib*.la
