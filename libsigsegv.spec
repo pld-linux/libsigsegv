@@ -12,6 +12,7 @@ Group:		Development/Libraries
 Source0:	ftp://ftp.gnu.org/gnu/libsigsegv/%{name}-%{version}.tar.gz
 # Source0-md5:	6d75ca3fede5fbfd72a78bc918d9e174
 URL:		http://www.gnu.org/directory/GNU/GNUlibsigsegv.html
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,7 +43,7 @@ u¿yteczn± technik± do implementacji:
 %setup -q
 
 %build
-cp /usr/share/automake/config.sub .
+cp -f /usr/share/automake/config.sub .
 %configure
 %{__make}
 
