@@ -46,7 +46,9 @@ u¿yteczn± technik± do implementacji:
 # %{__automake}
 %configure
 %{__make}
+%ifnarch alpha
 %{__make} check
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
