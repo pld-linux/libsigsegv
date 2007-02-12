@@ -3,7 +3,7 @@
 %bcond_with	tests	# perform "make check" (requires mounted /proc)
 #
 Summary:	GNU libsigsegv - handling page faults in user mode
-Summary(pl):	GNU libsigsegv - obs³uga b³êdów segmentacji na poziomie u¿ytkownika
+Summary(pl.UTF-8):   GNU libsigsegv - obsÅ‚uga bÅ‚Ä™dÃ³w segmentacji na poziomie uÅ¼ytkownika
 Name:		libsigsegv
 Version:	2.4
 Release:	1
@@ -27,16 +27,16 @@ useful technique for implementing:
 - distributed shared memory,
 - ...
 
-%description -l pl
-Biblioteka obs³uguje b³êdy obs³ugi stron na poziomie u¿ytkownika. B³±d
-strony pojawia siê gdy program próbuje dostaæ siê do aktualnie
-niedostêpnego obszaru pamiêci. Zbieranie i obs³uga b³êdów stron jest
-u¿yteczn± technik± do implementacji:
-- stronicowalnej pamiêci wirtualnej
-- mapowalnej pamiêci baz danych
-- generowania od¶miecaczy
-- b³êdów przepe³nienia stosu
-- rozproszonej pamiêci wspó³dzielonej
+%description -l pl.UTF-8
+Biblioteka obsÅ‚uguje bÅ‚Ä™dy obsÅ‚ugi stron na poziomie uÅ¼ytkownika. BÅ‚Ä…d
+strony pojawia siÄ™ gdy program prÃ³buje dostaÄ‡ siÄ™ do aktualnie
+niedostÄ™pnego obszaru pamiÄ™ci. Zbieranie i obsÅ‚uga bÅ‚Ä™dÃ³w stron jest
+uÅ¼ytecznÄ… technikÄ… do implementacji:
+- stronicowalnej pamiÄ™ci wirtualnej
+- mapowalnej pamiÄ™ci baz danych
+- generowania odÅ›miecaczy
+- bÅ‚Ä™dÃ³w przepeÅ‚nienia stosu
+- rozproszonej pamiÄ™ci wspÃ³Å‚dzielonej
 - ...
 
 %prep
