@@ -3,7 +3,7 @@
 %bcond_with	tests	# perform "make check" (requires mounted /proc)
 #
 Summary:	GNU libsigsegv - handling page faults in user mode
-Summary(pl.UTF-8):   GNU libsigsegv - obsługa błędów segmentacji na poziomie użytkownika
+Summary(pl.UTF-8):	GNU libsigsegv - obsługa błędów segmentacji na poziomie użytkownika
 Name:		libsigsegv
 Version:	2.4
 Release:	1
