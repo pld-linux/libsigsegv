@@ -6,7 +6,7 @@ Summary:	GNU libsigsegv - handling page faults in user mode
 Summary(pl.UTF-8):	GNU libsigsegv - obsługa błędów segmentacji na poziomie użytkownika
 Name:		libsigsegv
 Version:	2.6
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Libraries
 Source0:	http://ftp.gnu.org/gnu/libsigsegv/%{name}-%{version}.tar.gz
@@ -43,6 +43,9 @@ użyteczną techniką do implementacji:
 %setup -q
 
 %build
+CXXFLAGS="%{rpmcxxflags} -fPIC"
+CFLAGS="%{rpmcflags} -fPIC"
+
 cp -f /usr/share/automake/config.sub autoconf
 %configure
 %{__make}
