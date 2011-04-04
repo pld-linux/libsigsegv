@@ -5,12 +5,12 @@
 Summary:	GNU libsigsegv - handling page faults in user mode
 Summary(pl.UTF-8):	GNU libsigsegv - obsługa błędów segmentacji na poziomie użytkownika
 Name:		libsigsegv
-Version:	2.9
+Version:	2.10
 Release:	1
 License:	GPL v2+
 Group:		Development/Libraries
 Source0:	http://ftp.gnu.org/gnu/libsigsegv/%{name}-%{version}.tar.gz
-# Source0-md5:	0bef39a96abacabec6a191dc7fd42ba3
+# Source0-md5:	7f96fb1f65b3b8cbc1582fb7be774f0f
 URL:		http://libsigsegv.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
