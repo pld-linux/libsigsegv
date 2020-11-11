@@ -80,6 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libsigsegv.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -93,7 +95,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_includedir}/sigsegv.h
 %attr(755,root,root) %{_libdir}/libsigsegv.so
-%{_libdir}/libsigsegv.la
 
 %files static
 %defattr(644,root,root,755)
