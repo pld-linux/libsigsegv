@@ -38,13 +38,38 @@ użyteczną techniką do implementacji:
 - rozproszonej pamięci współdzielonej
 - ...
 
+%package devel
+Summary:	Header files for libsigsegv library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libsigsegv
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description devel
+Header files for libsigsegv library.
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe biblioteki libsigsegv.
+
+%package static
+Summary:	Static libsigsegv library
+Summary(pl.UTF-8):	Statyczna biblioteka libsigsegv
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static libsigsegv library.
+
+%description static -l pl.UTF-8
+Statyczna biblioteka libsigsegv.
+
 %prep
 %setup -q
 
 %build
 CXXFLAGS="%{rpmcxxflags} -fPIC"
 CFLAGS="%{rpmcflags} -fPIC"
-%configure
+%configure \
+	--enable-shared
 %{__make}
 
 %{?with_tests:%{__make} check}
@@ -61,6 +86,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{_libdir}/libsigsegv.so.2
+%attr(755,root,root) %{_libdir}/libsigsegv.so.*.*.*
+
+%files devel
+%defattr(644,root,root,755)
 %{_includedir}/sigsegv.h
-%{_libdir}/libsigsegv.a
+%attr(755,root,root) %{_libdir}/libsigsegv.so
 %{_libdir}/libsigsegv.la
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libsigsegv.a
