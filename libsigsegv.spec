@@ -11,7 +11,7 @@ License:	GPL v2+
 Group:		Development/Libraries
 Source0:	http://ftp.gnu.org/gnu/libsigsegv/%{name}-%{version}.tar.gz
 # Source0-md5:	58a6db48f79f5c735a9dce3a37c52779
-URL:		http://libsigsegv.sourceforge.net/
+URL:		https://www.gnu.org/software/libsigsegv/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
