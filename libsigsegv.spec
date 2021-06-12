@@ -9,7 +9,7 @@ Version:	2.13
 Release:	1
 License:	GPL v2+
 Group:		Development/Libraries
-Source0:	http://ftp.gnu.org/gnu/libsigsegv/%{name}-%{version}.tar.gz
+Source0:	https://ftp.gnu.org/gnu/libsigsegv/%{name}-%{version}.tar.gz
 # Source0-md5:	cf4a5fdc95e5494eaa190825af11f3be
 URL:		https://www.gnu.org/software/libsigsegv/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -85,16 +85,19 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/libsigsegv.so.2
 %attr(755,root,root) %{_libdir}/libsigsegv.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libsigsegv.so.2
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/sigsegv.h
 %attr(755,root,root) %{_libdir}/libsigsegv.so
+%{_includedir}/sigsegv.h
 
 %files static
 %defattr(644,root,root,755)
